@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+@available(macOS 10.15, *)
 /// Shadow configuration tokens for consistent elevation effects
 public enum ShadowTokens {
     public struct ShadowStyle : Sendable, Equatable{
@@ -62,6 +63,7 @@ public enum ShadowTokens {
 }
 
 // Convenience extension
+@available(macOS 10.15, *)
 public extension View {
     /// Apply a shadow style from the tokens
     func applyShadow(_ style: ShadowTokens.ShadowStyle) -> some View {

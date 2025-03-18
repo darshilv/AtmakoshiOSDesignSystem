@@ -58,6 +58,7 @@ public enum TypographyTokens {
 }
 
 // Extension for easy access to typography
+@available(macOS 10.15, *)
 public extension Font {
     static var ds: TypographyTokens.Type { TypographyTokens.self }
 }

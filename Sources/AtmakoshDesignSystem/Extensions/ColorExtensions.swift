@@ -24,6 +24,7 @@ public extension Color {
     static var purple: ColorTokens.Purple.Type { ColorTokens.Purple.self }
 }
 
+@available(macOS 10.15, *)
 extension Color {
     /// Initialize a Color using a hex string (e.g. "#FF0000" or "FF0000")
     public init(hex: String) {

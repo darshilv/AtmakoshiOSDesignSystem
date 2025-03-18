@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+@available(macOS 10.15, *)
 // Tailwind-inspired color system
 public enum ColorTokens {
     // MARK: - Slate
@@ -23,6 +24,7 @@ public enum ColorTokens {
         public static let slate800 = Color(hex: "1e293b")
         public static let slate900 = Color(hex: "0f172a")
         public static let slate950 = Color(hex: "020617")
+    
     }
     
     // MARK: - Gray
