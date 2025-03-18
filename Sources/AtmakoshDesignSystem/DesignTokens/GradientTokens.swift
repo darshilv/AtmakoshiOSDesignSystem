@@ -18,10 +18,10 @@ public enum GradientTokens {
     // Predefined gradient
     public static let backgroundGradient = LinearGradient(
         gradient: SwiftUI.Gradient(colors: [
-            darkGreen,
-            darkTeal,
-            mediumTeal,
-            lightTeal
+            lightTeal,
+            mediumTeal
+            //darkGreen,
+            //darkTeal,
         ]),
         startPoint: .top,
         endPoint: .bottom
