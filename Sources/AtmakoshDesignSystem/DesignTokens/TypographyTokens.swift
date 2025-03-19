@@ -95,6 +95,10 @@ public enum TypographyTokens {
     public static func labelText() -> Font {
         Font.system(size: Size.md, weight: Weight.medium)
     }
+    
+    public static func pillText() -> Font {
+        Font.system(size: Size.sm, weight: Weight.regular)
+    }
 }
 
 // Extension for easy access to typography
