@@ -14,14 +14,16 @@ public enum GradientTokens {
     public static let darkTeal = Color(hex: "214345")
     public static let mediumTeal = Color(hex: "467275")
     public static let lightTeal = Color(hex: "91B0B2")
+   // public static let teal50 = Color(hex: "D7EEEB")
     
     // Predefined gradient
     public static let backgroundGradient = LinearGradient(
         gradient: SwiftUI.Gradient(colors: [
-            lightTeal,
-            mediumTeal
+            ColorTokens.Teal.teal50,
+            ColorTokens.Teal.teal100,
+            ColorTokens.Teal.teal200
             //darkGreen,
-            //darkTeal,
+            //darkTeal
         ]),
         startPoint: .top,
         endPoint: .bottom
