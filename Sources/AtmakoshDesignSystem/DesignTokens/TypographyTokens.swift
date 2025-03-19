@@ -57,9 +57,7 @@ public enum TypographyTokens {
         Font.system(size: Size.xs, weight: Weight.regular)
     }
     
-    public static func titleFont() -> Font {
-        Font.system(size: Size.xxl, weight: Weight.bold)
-    }
+   
     
     // New additions for Yogakosh home page based on iOS Music app
     
@@ -90,7 +88,7 @@ public enum TypographyTokens {
     
     // Card subtitle (like descriptions in Music app)
     public static func cardSubtitle() -> Font {
-        Font.system(size: Size.sm, weight: Weight.medium)
+        Font.system(size: Size.sm, weight: Weight.regular)
     }
     
     // Label text (for buttons and interactive elements)
