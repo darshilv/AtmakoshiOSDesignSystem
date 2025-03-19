@@ -47,6 +47,9 @@ public enum TypographyTokens {
         Font.custom(primaryFontBold, size: Size.xl)
     }
     
+    public static func subheading() -> Font {
+        Font.custom(primaryFontBold, size: Size.lg)
+    }
     public static func body() -> Font {
         Font.custom(primaryFontRegular, size: Size.md)
     }
@@ -61,40 +64,40 @@ public enum TypographyTokens {
     
     // New additions for Yogakosh home page based on iOS Music app
     
-    // App name in header - bold, prominent
-    public static func appNameHeader() -> Font {
-        Font.custom(primaryFontBold, size: Size.xl)
-    }
-    
-    // Welcome header (like "Home" in Music app)
-    public static func welcomeHeader() -> Font {
-        Font.custom(primaryFontBold, size: Size.xxxl)
-    }
-    
-    // Section headers (like "Top Picks for You" in Music app)
-    public static func sectionHeader() -> Font {
-        Font.custom(primaryFontBold, size: Size.lg)
-    }
-    
-    // Section subheaders (like "Made for You" in Music app)
-    public static func sectionSubheader() -> Font {
-        Font.custom(primaryFontRegular, size: Size.sm)
-    }
-    
-    // Card title (like playlist names in Music app)
-    public static func cardTitle() -> Font {
-        Font.custom(primaryFontBold, size: Size.lg)
-    }
-    
-    // Card subtitle (like descriptions in Music app)
-    public static func cardSubtitle() -> Font {
-        Font.custom(primaryFontMedium, size: Size.sm)
-    }
-    
-    // Label text (for buttons and interactive elements)
-    public static func labelText() -> Font {
-        Font.custom(primaryFontMedium, size: Size.md)
-    }
+//    // App name in header - bold, prominent
+//    public static func appNameHeader() -> Font {
+//        Font.custom(primaryFontBold, size: Size.xl)
+//    }
+//    
+//    // Welcome header (like "Home" in Music app)
+//    public static func welcomeHeader() -> Font {
+//        Font.custom(primaryFontBold, size: Size.xxxl)
+//    }
+//    
+//    // Section headers (like "Top Picks for You" in Music app)
+//    public static func sectionHeader() -> Font {
+//        Font.custom(primaryFontBold, size: Size.lg)
+//    }
+//    
+//    // Section subheaders (like "Made for You" in Music app)
+//    public static func sectionSubheader() -> Font {
+//        Font.custom(primaryFontRegular, size: Size.sm)
+//    }
+//    
+//    // Card title (like playlist names in Music app)
+//    public static func cardTitle() -> Font {
+//        Font.custom(primaryFontBold, size: Size.lg)
+//    }
+//    
+//    // Card subtitle (like descriptions in Music app)
+//    public static func cardSubtitle() -> Font {
+//        Font.custom(primaryFontMedium, size: Size.sm)
+//    }
+//    
+//    // Label text (for buttons and interactive elements)
+//    public static func labelText() -> Font {
+//        Font.custom(primaryFontMedium, size: Size.md)
+//    }
 }
 
 // Extension for easy access to typography
