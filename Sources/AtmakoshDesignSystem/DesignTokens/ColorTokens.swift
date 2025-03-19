@@ -135,8 +135,8 @@ public enum ColorTokens {
     // MARK: - Indigo
     public enum Teal{
         public static let teal50 = Color(hex: "#D7EEEB")
-        public static let teal100 = Color(hex: "#ccfbf1")
-        public static let teal200 = Color(hex: "#99f6e4")
+        public static let teal100 = Color(hex: "#91B0B2")
+        public static let teal200 = Color(hex: "#467275")
         public static let teal300 = Color(hex: "#5eead4")
         public static let teal400 = Color(hex: "#2dd4bf")
         public static let teal500 = Color(hex: "#14b8a6")
