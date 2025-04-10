@@ -20,21 +20,30 @@ public struct PrimaryButton: View {
         self.action = action
     }
     
+    // MARK: - Body
     public var body: some View {
         Button(action: action) {
             Text(title)
-                .font(Font.ds.body())
-                .fontWeight(Font.ds.Weight.medium)
+                .font(.headline)
+                .foregroundColor(.white)
                 .frame(maxWidth: .infinity)
+                .frame(height: 50)
+            //.padding(.horizontal, isFullWidth ? 0 : horizontalPadding)
         }
-        .primaryStyle()
+        .background(
+             RoundedRectangle(cornerRadius: 20)
+                .fill(ColorTokens.Teal.teal900)
+            
+        )
+       // .padding(.horizontal, isFullWidth ? horizontalPadding : 0)
     }
+    
 }
 
 @available(macOS 10.15.0, *)
 struct PrimaryButton_Previews: PreviewProvider {
     static var previews: some View {
-        PrimaryButton(title: "Press Me", action: {})
+        PrimaryButton(title: "Start Practice", action: {})
             .padding()
             .previewLayout(.sizeThatFits)
     }

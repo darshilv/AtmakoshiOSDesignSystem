@@ -180,9 +180,9 @@ public enum ColorTokens {
     // MARK: - Semantic Colors
     public enum Semantic {
         // Base text colors
-        public static let textPrimary = Gray.gray900
-        public static let textSecondary = Gray.gray600
-        public static let textTertiary = Gray.gray400
+        public static let textPrimary = Teal.teal900
+        public static let textSecondary = Teal.teal600
+        public static let textTertiary = Teal.teal400
         
         // Background colors
         public static let backgroundPrimary = Gray.gray50
@@ -199,5 +199,11 @@ public enum ColorTokens {
         public static let primary = Blue.blue600
         public static let secondary = Purple.purple600
         public static let tertiary = Gray.gray600
+        
+        //border colors
+        public static let borderMedium = Color(hex: "EBEBEB")
+        
+        //grabber
+        public static let grabber = Slate.slate500
     }
 }

@@ -7,7 +7,7 @@
 
 // TextExtensions.swift
 import SwiftUI
-
+@available(macOS 10.15, *)
 public extension Text {
     /// Applies heading 1 style
     func headingStyle() -> some View {
@@ -31,6 +31,7 @@ public extension Text {
 }
 
 // Modifiers for text styles
+@available(macOS 10.15, *)
 struct HeadingStyleModifier: ViewModifier {
     @Environment(\.theme) private var theme
     
@@ -41,6 +42,7 @@ struct HeadingStyleModifier: ViewModifier {
     }
 }
 
+@available(macOS 10.15, *)
 struct SubheadingStyleModifier: ViewModifier {
     @Environment(\.theme) private var theme
     
@@ -51,6 +53,7 @@ struct SubheadingStyleModifier: ViewModifier {
     }
 }
 
+@available(macOS 10.15, *)
 struct BodyStyleModifier: ViewModifier {
     @Environment(\.theme) private var theme
     
@@ -61,6 +64,7 @@ struct BodyStyleModifier: ViewModifier {
     }
 }
 
+@available(macOS 10.15, *)
 struct CaptionStyleModifier: ViewModifier {
     @Environment(\.theme) private var theme
     
