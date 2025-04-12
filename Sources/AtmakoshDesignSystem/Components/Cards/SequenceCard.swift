@@ -1,6 +1,7 @@
 
 import SwiftUI
 
+
 // MARK: - Sequence Card Component
 public struct SequenceCard: View {
     enum Size {
@@ -110,11 +111,11 @@ public struct SequenceCard: View {
                     
                     // Description - only show for regular cards or if space permits
                      
-                        Text(sequence.description)
-                            .font(.body)
-                            .foregroundColor(ColorTokens.Teal.teal900)
-                            .lineLimit(1)
-                            .padding(.bottom, SpacingTokens.xs)
+//                        Text(sequence.description)
+//                            .font(.body)
+//                            .foregroundColor(ColorTokens.Teal.teal900)
+//                            .lineLimit(1)
+//                            .padding(.bottom, SpacingTokens.xs)
                     
                 }
                 .padding(.horizontal, SpacingTokens.md)
@@ -190,7 +191,7 @@ public struct YogaSequence: Identifiable {
     public let description: String
     public let duration: Int // Duration in minutes
     public let difficulty: String
-    public let focus: [String]
+    public let focus: String
    
     public let imageUrl: String?
     public let isLocked: Bool
@@ -207,7 +208,7 @@ public struct YogaSequence: Identifiable {
         description: String,
         duration: Int,
         difficulty: String,
-        focus: [String],
+        focus: String,
         imageUrl: String?,
         isLocked: Bool
     ) {
@@ -239,7 +240,7 @@ struct SequenceCard_Previews: PreviewProvider {
                     description: "Gentle awakening, stretching",
                     duration: 20,
                     difficulty: "Beginner",
-                    focus: ["Core", "Flexibility"],
+                    focus: "Core, Flexibility",
                     imageUrl: "https://cvws.icloud-content.com/B/AWiwDwZMsT33M33zClhC8wc7CKY1ASXKf4M-QEm4J0DOzJEsulpprIoD/generate-an-illustration-of-a-yogi-in-king-pigeon-.png?o=AjVsV43PHn15koLps9PtrK2diiBxsLNSJJqcxoB9H7XU&v=1&x=3&a=CAogEwazpksVHHGr12_NYXN9tekeM71eXvb_cpfZgFtBt7YSbRC2j9mD4jIYtuy0heIyIgEAUgQ7CKY1WgRprIoDaibc6urEHPK3CiIdnmlCcebDgh4RgcJEj5ndqSP9KtUzYYfAYntjQHIm7tK6L4drKVzew3CA0YrdeZsIL29SA0PFX-Bh6PeMlyZaBm-Go28&e=1744304944&fl=&r=b940dec7-a93e-4e4d-acdf-7063f6d18d2b-1&k=67xpCKA8wAMbqeKv3Gh7sw&ckc=com.apple.clouddocs&ckz=com.apple.CloudDocs&p=52&s=76xuLSzbgbviO3eaAlYNpUmATK8&cd=i",
                     isLocked: false
                 ),
@@ -257,7 +258,7 @@ struct SequenceCard_Previews: PreviewProvider {
                     description: "lower back, core",
                     duration: 30,
                     difficulty: "Intermediate",
-                    focus: ["Lower Back", "Core"],
+                    focus: "Lower Back,Core",
                     imageUrl: "https://cvws.icloud-content.com/B/AXOn2XaKZFVh4G0le-3bkewIHzdsARM5F618u0DBaK50PRdB-o9nE3m3/generate-an-illustration-of-a-yogi-in-camel-pose-w.png?o=AowaE8whIcurxBT6viggaCCK62Fe1w8iI1_hS5HGxJcS&v=1&x=3&a=CAoggnGpOhgqiFmbxtbnh8wk6yLJX2cc8pjnkJjc6X2zvt8SbRCcjNqD4jIYnOm1heIyIgEAUgQIHzdsWgRnE3m3aib0lKlF5-1n-6tKO482RTOL1QdgsZVg_m_8a9qFf4NYgwi2HOnP2nIm-Wg_mNrIGluS4kVhXQJmHaXcYG-DqFsiITLN4JH5dC8WTatMjHU&e=1744304960&fl=&r=1011d22d-8676-45ea-b7f2-9e6fe889a5e6-1&k=d4wVQrGcXLt65xTpQTnLFQ&ckc=com.apple.clouddocs&ckz=com.apple.CloudDocs&p=52&s=by79LP_Z_3z5lGgSOusoP29hdhc&cd=i",
                     isLocked: true
                 ),

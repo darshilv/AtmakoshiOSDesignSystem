@@ -32,7 +32,6 @@ struct PillView: View {
             icon
                 .font(.system(size: 14))
                 .foregroundColor(textColor)
-            
             Text(text)
                 .font(.system(size: 14, weight: .medium))
                 .foregroundColor(textColor)

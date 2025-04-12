@@ -196,7 +196,7 @@ public enum ColorTokens {
         public static let info = Blue.blue500
         
         // Action colors
-        public static let primary = Blue.blue600
+        public static let primary = Teal.teal900
         public static let secondary = Purple.purple600
         public static let tertiary = Gray.gray600
         

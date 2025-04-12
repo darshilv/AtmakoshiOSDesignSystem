@@ -131,7 +131,7 @@ struct SequenceDrawerView: View {
         HStack {
             Image(systemName: "target")
                 .foregroundColor(.gray)
-            Text(sequence.focus.joined(separator: ", "))
+            Text(sequence.focus)
                 .font(.subheadline)
         }
         .padding(.vertical, 8)
@@ -173,6 +173,7 @@ struct SequenceDrawerView: View {
                     .foregroundColor(.white)
                     .cornerRadius(20)
                 }
+                
             } else {
                 HStack {
                     Image(systemName: "lock")
@@ -350,25 +351,25 @@ struct PoseItemView: View {
 
 // MARK: - Helper Extensions
 
-extension View {
-    func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
-        clipShape(RoundedCorner(radius: radius, corners: corners))
-    }
-}
-
-struct RoundedCorner: Shape {
-    var radius: CGFloat = .infinity
-    var corners: UIRectCorner = .allCorners
-    
-    func path(in rect: CGRect) -> Path {
-        let path = UIBezierPath(
-            roundedRect: rect,
-            byRoundingCorners: corners,
-            cornerRadii: CGSize(width: radius, height: radius)
-        )
-        return Path(path.cgPath)
-    }
-}
+//extension View {
+//    func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
+//        clipShape(RoundedCorner(radius: radius, corners: corners))
+//    }
+//}
+//
+//struct RoundedCorner: Shape {
+//    var radius: CGFloat = .infinity
+//    var corners: UIRectCorner = .allCorners
+//    
+//    func path(in rect: CGRect) -> Path {
+//        let path = UIBezierPath(
+//            roundedRect: rect,
+//            byRoundingCorners: corners,
+//            cornerRadii: CGSize(width: radius, height: radius)
+//        )
+//        return Path(path.cgPath)
+//    }
+//}
 
 // MARK: - Preview
 
@@ -394,7 +395,7 @@ struct SequenceDrawerView_Previews: PreviewProvider {
             description: "This dynamic flow begins with centering breath and gentle warm-ups before building intensity through a series of standing postures that challenge balance, such as Warrior III and Half Moon. The sequence then transitions to core work and ends with deep stretches for recovery.",
             duration: 45,
             difficulty: "Advanced",
-            focus: ["Back", "Hips"],
+            focus: "Back, Hips",
             imageUrl: nil,
             isLocked: true
         )
@@ -407,7 +408,7 @@ struct SequenceDrawerView_Previews: PreviewProvider {
             description: "This dynamic flow begins with centering breath and gentle warm-ups before building intensity through a series of standing postures that challenge balance.",
             duration: 30,
             difficulty: "Intermediate",
-            focus: ["Core", "Balance"],
+            focus: "Core,Balance",
             imageUrl: nil,
             isLocked: false
         )
