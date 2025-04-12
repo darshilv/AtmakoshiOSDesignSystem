@@ -8,7 +8,7 @@
 import SwiftUI
 
 // Placeholder for when image isn't available
-public var placeholderView: some View {
+public var PlaceholderImage: some View {
     Rectangle()
         .fill(ColorTokens.Teal.teal50)
         .frame(height: 180)
