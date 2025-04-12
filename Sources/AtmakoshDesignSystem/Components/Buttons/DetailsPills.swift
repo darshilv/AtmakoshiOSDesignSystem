@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PillView: View {
+public struct PillView: View {
     enum PillType {
         case duration
         case level
@@ -26,7 +26,7 @@ struct PillView: View {
         self.textColor = textColor
     }
     
-    var body: some View {
+   public  var body: some View {
         HStack(spacing: 4) {
             // Icon based on pill type
             icon
