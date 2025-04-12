@@ -8,25 +8,26 @@
 import SwiftUI
 
 public struct PillView: View {
-    enum PillType {
+    public enum PillType {
         case duration
         case level
         case custom(systemName: String)
     }
     
-    let text: String
-    let type: PillType
-    let backgroundColor: Color
-    let textColor: Color
+     let text: String
+     let type: PillType
+     let backgroundColor: Color
+     let textColor: Color
     
-    init(text: String, type: PillType, backgroundColor: Color = Color(.white), textColor: Color = ColorTokens.Teal.teal900) {
+    
+    public init(text: String, type: PillType, backgroundColor: Color = Color(.white), textColor: Color = ColorTokens.Teal.teal900) {
         self.text = text
         self.type = type
         self.backgroundColor = backgroundColor
         self.textColor = textColor
     }
     
-   public  var body: some View {
+   public var body: some View {
         HStack(spacing: 4) {
             // Icon based on pill type
             icon
