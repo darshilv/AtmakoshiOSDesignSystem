@@ -7,7 +7,7 @@
 
 import SwiftUI
 // Lock icon view
-public struct LockIcon: View {
+public struct LockIconView: View {
     public var body: some View {
         ZStack {
             Circle()

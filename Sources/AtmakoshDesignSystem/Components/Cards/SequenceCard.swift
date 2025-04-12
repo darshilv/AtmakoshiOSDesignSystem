@@ -30,7 +30,7 @@ public struct SequenceCard: View {
                 
                 // Lock icon if sequence is locked
                 if cardIsLocked {
-                    LockIcon()
+                    LockIconView()
                 }
             }
             
