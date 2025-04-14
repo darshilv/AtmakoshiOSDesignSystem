@@ -15,11 +15,13 @@ public struct PoseCard: View {
     private let subTitle : String?
     private let pillText : String?
     private let ImageURL: String
+    private let side: String?
     
-    public init(title: String, subTitle: String?, pillText: String?, ImageURL: String) {
+    public init(title: String, subTitle: String?, pillText: String?, ImageURL: String, side: String? = nil) {
         self.ImageURL = ImageURL
         self.title = title
         self.subTitle = subTitle
+        self.side = side
         self.pillText = pillText
     }
     // MARK: - Body
@@ -27,6 +29,8 @@ public struct PoseCard: View {
         HStack(spacing: 16) {
             // Left side - Pose image
             poseImageView
+                
+                .scaledToFit()
             
             // Right side - Pose details
             poseDetailsView
@@ -87,25 +91,41 @@ public struct PoseCard: View {
             // Name and Sanskrit name
             VStack(alignment: .leading, spacing: 4) {
                 Text(title)
-                    .font(.headline)
+                    .font(.title3)
                     .fontWeight(.semibold)
                     .foregroundColor(ColorTokens.Semantic.textPrimary)
                 
                 if !subTitle!.isEmpty {
                     Text(subTitle!)
-                        .font(.system(size: 14, weight: .regular))
-                        .italic()
+                        .font(.headline)
+                        .fontWeight(.regular)
                         .foregroundColor(ColorTokens.Semantic.textPrimary)
                 }
+                
+                if let side = side {
+                       Text(side)
+                           .font(.subheadline)
+                           .fontWeight(.regular)
+                           .foregroundColor(ColorTokens.Semantic.textPrimary)
+                   }
+                           
             }
             
             Spacer()
             
             // Duration pill
+            
             if !pillText!.isEmpty{
-                Text(pillText ?? "")
-                    .font(.system(size: 14, weight: .medium))
-                    .foregroundColor(ColorTokens.Teal.teal800)
+                HStack(spacing:2) {
+                               Image(systemName: "clock")
+                                   .foregroundColor(ColorTokens.Teal.teal800)
+                               
+                                Text(pillText ?? "")
+                                       .font(.callout)
+                                       .foregroundColor(ColorTokens.Teal.teal800)
+                           }
+                           .padding(.trailing, 16)
+//
             }
                
         }
@@ -121,15 +141,17 @@ struct PoseCard_Previews: PreviewProvider {
             PoseCard(
                 title: "Mountain Pose",
                 subTitle: "Tadasana",
-                pillText: "60sec",
+                pillText: "60s",
                 ImageURL: "https://cvws.icloud-content.com/B/ARfwdBLCvvxLCgt4eesM2zN4v3NfAfpoAd3WSSqitmm0YGfvU8wrBh4u/Easy+seat.png?o=Au6DF9f-83UD1ZUyBoazi7o7vzzO1qPS2obk0DweEbm3&v=1&x=3&a=CAogoWw-KFHlCm2CvkvHB6Co2ntMrhdyw-6lx68hyJiZDbYSbRCB9KWN4jIYgdGBj-IyIgEAUgR4v3NfWgQrBh4uaiafr_MdovVqKqwNZ1_y7XDKV2ok1NkOWWEkWylAqEGysH8GcTdAD3Im02kW1AyFPgielmcxbtoqgzpkMKMVA-t6MojUavUvKihEhaen0eM&e=1744325077&fl=&r=6fffaa31-76cf-4642-a31b-bcbb3e3ca94c-1&k=v1I38riAO_JNl6BrCOuDxQ&ckc=com.apple.clouddocs&ckz=com.apple.CloudDocs&p=52&s=7RguzMM8JjrLSHB0fQRszfo74UU&cd=i"
             );
             
             PoseCard(
                 title: "Downward Facing Dog",
                 subTitle: "Adho Mukha Svanasana",
-                pillText: "45sec",
-                ImageURL: "https://cvws.icloud-content.com/B/ARIkkpNzutQWuH9YGvlJ7i3Qq8_qASrO9WQBN438Rpb4B9-DN5CbOR87/Easy+seated+twist.png?o=ApLo3MGEDQNMjWMtiQnQDAMflTn9eZVJlf03X3D31bDA&v=1&x=3&a=CAogD-LRswJdqe997Ya1caioFT0ydIoV9-6w9AtzysQkXfoSbRCzxaeN4jIYs6KDj-IyIgEAUgTQq8_qWgSbOR87aiaWvJnxhjoD5Oo_Q5kv3LPFtPHPSvebrywwmdiT_AMLgUKLbP5VsHImur-JhT0yynFWdYNv8wcp7kTd5bg37Pc5Qb6OPoFzZSKq7RHvO3w&e=1744325103&fl=&r=2cdce80d-db15-4f1b-9401-0e72ead39ed3-1&k=YhY30bqyT6md42sWscKg9Q&ckc=com.apple.clouddocs&ckz=com.apple.CloudDocs&p=52&s=RPOxIR1-Lge5VHliGy5IzSPoSlc&cd=i"
+                
+                pillText: "45s",
+                ImageURL: "https://cvws.icloud-content.com/B/ARIkkpNzutQWuH9YGvlJ7i3Qq8_qASrO9WQBN438Rpb4B9-DN5CbOR87/Easy+seated+twist.png?o=ApLo3MGEDQNMjWMtiQnQDAMflTn9eZVJlf03X3D31bDA&v=1&x=3&a=CAogD-LRswJdqe997Ya1caioFT0ydIoV9-6w9AtzysQkXfoSbRCzxaeN4jIYs6KDj-IyIgEAUgTQq8_qWgSbOR87aiaWvJnxhjoD5Oo_Q5kv3LPFtPHPSvebrywwmdiT_AMLgUKLbP5VsHImur-JhT0yynFWdYNv8wcp7kTd5bg37Pc5Qb6OPoFzZSKq7RHvO3w&e=1744325103&fl=&r=2cdce80d-db15-4f1b-9401-0e72ead39ed3-1&k=YhY30bqyT6md42sWscKg9Q&ckc=com.apple.clouddocs&ckz=com.apple.CloudDocs&p=52&s=RPOxIR1-Lge5VHliGy5IzSPoSlc&cd=i",
+                side: "side1"
             );
         }
         .padding()
