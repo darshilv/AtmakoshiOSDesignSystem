@@ -35,6 +35,8 @@ public struct PoseCard: View {
         .background(Color.white)
         .cornerRadius(12)
         .shadow(color: Color.black.opacity(0.05), radius: 2, x: 0, y: 1)
+        .frame(height: 120)
+        
     }
     
     // MARK: - Components
@@ -42,8 +44,9 @@ public struct PoseCard: View {
     private var poseImageView: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 10)
-                .fill(.white)
-                .frame(width: 70, height: 70)
+                .fill(GradientTokens.backgroundGradient)
+                .frame(width: 100, height: 100)
+                
             
             
             if let url = URL(string: ImageURL) {
@@ -57,7 +60,7 @@ public struct PoseCard: View {
                             image
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
-                                .frame(width: 70, height: 70)
+                                //.frame(width: 100, height: 100)
                                 .clipShape(RoundedRectangle(cornerRadius: 10))
                                 //.background(GradientTokens.backgroundGradient)
                                
@@ -114,7 +117,7 @@ public struct PoseCard: View {
 // MARK: - Preview
 struct PoseCard_Previews: PreviewProvider {
     static var previews: some View {
-        VStack(spacing: 16) {
+        VStack(spacing: 40) {
             PoseCard(
                 title: "Mountain Pose",
                 subTitle: "Tadasana",
@@ -131,6 +134,6 @@ struct PoseCard_Previews: PreviewProvider {
         }
         .padding()
         .background(GradientTokens.backgroundGradient)
-        .previewLayout(.sizeThatFits)
+       // .previewLayout(.sizeThatFits)
     }
 }
