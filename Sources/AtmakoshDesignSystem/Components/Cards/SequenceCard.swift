@@ -31,10 +31,16 @@ public struct SequenceCard: View {
             // Image section
             ZStack(alignment: .topTrailing) {
                 Image(uiImage: cardImage)
+//                    .resizable()
+//                    .aspectRatio(contentMode: .fit)
+//                    .frame(height: 300)
+//                    .edgesIgnoringSafeArea(.all)
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(height: 300)
-                    .edgesIgnoringSafeArea(.all)
+                    .aspectRatio(contentMode: .fill) // Changed from .fit to .fill
+                    .frame(maxWidth: .infinity) // Added maxWidth: .infinity
+                    .clipped() // Added to crop the image if it exceeds the frame
+                                    // Only apply top corner radius to the image
+                    .cornerRadius(RadiusTokens.xl)
                 // Lock icon if sequence is locked
                 if cardIsLocked! {
                     LockIconView()
