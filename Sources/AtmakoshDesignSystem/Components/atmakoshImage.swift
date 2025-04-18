@@ -35,6 +35,8 @@ public struct atmakoshImage: View {
             Image(systemName: "photo") // Placeholder
                 .resizable()
                 .aspectRatio(contentMode: .fit)
+                .foregroundColor(Color.gray.opacity(0.2))
+                .frame(height: 300)
                 .onAppear {
                     loadImage(imageURL) { loadedImage in
                         // Update image

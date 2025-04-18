@@ -5,42 +5,24 @@ import SwiftUI
 // MARK: - Sequence Card Component
 public struct SequenceCard: View {
     // Data model for the card - using the existing model from your code
-    private let cardImageURL: String
+    private let cardImage: UIImage
     private let cardTitle: String
     private let cardSubtitle: String?
     private let cardIsLocked: Bool?
     private let duration: String?
     private let difficulty: String?
-    private let loadImage: ((String, @escaping (UIImage?) -> Void) -> Void)?
 //    @State private var cardImage: UIImage?
     
-    public init(cardImageURL: String, cardTitle: String, cardSubtitle: String?, cardIsLocked: Bool?, duration: String?, difficulty: String?) {
-        self.cardImageURL = cardImageURL
+    public init(cardImage: UIImage, cardTitle: String, cardSubtitle: String?, cardIsLocked: Bool?, duration: String?, difficulty: String?) {
+        self.cardImage = cardImage
         self.cardTitle = cardTitle
         self.cardSubtitle = cardSubtitle
         self.cardIsLocked = cardIsLocked ?? true
         self.duration = duration
         self.difficulty = difficulty
-        self.loadImage = nil
     }
     
-    public init(
-        cardImageURL: String,
-        cardTitle: String,
-        cardSubtitle: String?,
-        cardIsLocked: Bool?,
-        duration: String?,
-        difficulty: String?,
-        loadImage: @escaping (String, @escaping (UIImage?) -> Void) -> Void
-    ) {
-        self.cardImageURL = cardImageURL
-        self.cardTitle = cardTitle
-        self.cardSubtitle = cardSubtitle
-        self.cardIsLocked = cardIsLocked ?? true
-        self.duration = duration
-        self.difficulty = difficulty
-        self.loadImage = loadImage
-    }
+    
     
     
     public var body: some View {
@@ -48,8 +30,7 @@ public struct SequenceCard: View {
         VStack(alignment: .leading, spacing: 0) {
             // Image section
             ZStack(alignment: .topTrailing) {
-                atmakoshImage(imageURL : cardImageURL, loadImage: loadImage!)
-                
+                atmakoshImage(image: cardImage)
                 // Lock icon if sequence is locked
                 if cardIsLocked! {
                     LockIconView()
