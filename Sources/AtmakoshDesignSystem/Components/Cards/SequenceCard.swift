@@ -91,7 +91,7 @@ struct SequenceCard_Previews: PreviewProvider {
         VStack(spacing: SpacingTokens.lg) {
             // Regular card
             SequenceCard(
-                cardImageURL: "",
+                cardImage: UIImage(systemName: "photo")!,
                 cardTitle: "Morning Flow",
                 cardSubtitle: "Gentle awakening, stretching",
                 cardIsLocked: false,
@@ -104,7 +104,7 @@ struct SequenceCard_Previews: PreviewProvider {
             
             HStack(){
                 SequenceCard(
-                    cardImageURL: "",
+                    cardImage: UIImage(systemName: "photo")!,
                     cardTitle: "Lower Back Relief",
                     cardSubtitle: "lower back, core",
                     cardIsLocked: true,
