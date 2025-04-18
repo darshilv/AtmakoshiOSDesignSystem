@@ -29,13 +29,12 @@ public struct PoseCard: View {
         HStack(spacing: 16) {
             // Left side - Pose image
             poseImageView
-                
                 .scaledToFit()
             
             // Right side - Pose details
             poseDetailsView
         }
-        .padding(16)
+        
         .background(Color.white)
         .cornerRadius(12)
         .shadow(color: Color.black.opacity(0.05), radius: 2, x: 0, y: 1)
@@ -47,7 +46,7 @@ public struct PoseCard: View {
     
     private var poseImageView: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 10)
+            Rectangle()
                 .fill(GradientTokens.backgroundGradient)
                 .frame(width: 100, height: 100)
                 
@@ -57,7 +56,7 @@ public struct PoseCard: View {
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     //.frame(width: 100, height: 100)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    //.clipShape(RoundedRectangle(cornerRadius: 10))
             } else{
                 PlaceholderImage
             }
@@ -73,12 +72,17 @@ public struct PoseCard: View {
                     .font(.title3)
                     .fontWeight(.semibold)
                     .foregroundColor(ColorTokens.Semantic.textPrimary)
+                    .truncationMode(.tail)
+                    .lineLimit(1)
+                    
                 
                 if !subTitle!.isEmpty {
                     Text(subTitle!)
                         .font(.headline)
                         .fontWeight(.regular)
                         .foregroundColor(ColorTokens.Semantic.textPrimary)
+                        .truncationMode(.tail)
+                        .lineLimit(1)
                 }
                 
                 if let side = side {
@@ -89,22 +93,20 @@ public struct PoseCard: View {
                    }
                            
             }
-            
             Spacer()
             
             // Duration pill
             
             if !pillText!.isEmpty{
                 HStack(spacing:2) {
-                               Image(systemName: "clock")
-                                   .foregroundColor(ColorTokens.Teal.teal800)
-                               
-                                Text(pillText ?? "")
-                                       .font(.callout)
-                                       .foregroundColor(ColorTokens.Teal.teal800)
-                           }
-                           .padding(.trailing, 16)
-//
+                   Image(systemName: "clock")
+                       .foregroundColor(ColorTokens.Teal.teal800)
+                   
+                    Text(pillText ?? "")
+                           .font(.callout)
+                           .foregroundColor(ColorTokens.Teal.teal800)
+               }
+               .padding(.trailing, 16)
             }
                
         }
@@ -127,7 +129,6 @@ struct PoseCard_Previews: PreviewProvider {
             PoseCard(
                 title: "Downward Facing Dog",
                 subTitle: "Adho Mukha Svanasana",
-                
                 pillText: "45s",
                 image: nil,
                 side: "side1"
