@@ -26,6 +26,7 @@ public enum TypographyTokens {
         public static let xxl: CGFloat = 24
         public static let xxxl: CGFloat = 30
         public static let xxxxl: CGFloat = 36
+        public static let xxxxxl: CGFloat = 48
     }
     
     // Font weights
@@ -99,6 +100,11 @@ public enum TypographyTokens {
     public static func pillText() -> Font {
         Font.system(size: Size.sm, weight: Weight.regular)
     }
+    
+    public static func controlsText() -> Font {
+        Font.system(size: Size.xxxxxl, weight: Weight.bold)
+    }
+    
 }
 
 // Extension for easy access to typography
