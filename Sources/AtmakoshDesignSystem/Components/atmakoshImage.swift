@@ -8,34 +8,38 @@
 import SwiftUI
 
 public struct atmakoshImage: View {
-    private let imageURL: String
-    
-    public init(imageURL: String) {
-        self.imageURL = imageURL
+    private let image: UIImage?
+    private let imageURL: String?
+    private let loadImage: ((String, @escaping (UIImage?) -> Void) -> Void)?
+        
+    // Init with already loaded image
+    public init(image: UIImage) {
+        self.image = image
+        self.imageURL = nil
+        self.loadImage = nil
     }
+    
+    // Init with URL and image loader function
+    public init(imageURL: String, loadImage: @escaping (String, @escaping (UIImage?) -> Void) -> Void) {
+        self.image = nil
+        self.imageURL = imageURL
+        self.loadImage = loadImage
+    }
+    
     public var body: some View {
-        if let url = URL(string: imageURL) {
-            if #available(macOS 12.0, *) {
-                AsyncImage(url: url) { phase in
-                    if let image = phase.image {
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(height: 180)
-                    } else if phase.error != nil {
-                        PlaceholderImage
-                    } else {
-                        PlaceholderImage
+        if let image = image {
+            Image(uiImage: image)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+        } else if let imageURL = imageURL, let loadImage = loadImage {
+            Image(systemName: "photo") // Placeholder
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .onAppear {
+                    loadImage(imageURL) { loadedImage in
+                        // Update image
                     }
                 }
-                .clipped()
-            }
-            else {
-                // Fallback on earlier versions
-                PlaceholderImage
-            }
-        } else {
-                PlaceholderImage
         }
     }
 }

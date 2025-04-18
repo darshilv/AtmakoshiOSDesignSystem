@@ -149,7 +149,7 @@ struct WrapLayout: Layout {
     }
     
     func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
-        let containerWidth = bounds.width
+        //let containerWidth = bounds.width
         
         var rowX: CGFloat = bounds.minX
         var rowY: CGFloat = bounds.minY
