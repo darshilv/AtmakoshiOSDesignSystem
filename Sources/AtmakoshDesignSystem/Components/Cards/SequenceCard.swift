@@ -34,6 +34,7 @@ public struct SequenceCard: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(height: 300)
+                    .edgesIgnoringSafeArea(.all)
                 // Lock icon if sequence is locked
                 if cardIsLocked! {
                     LockIconView()
@@ -91,6 +92,7 @@ struct SequenceCard_Previews: PreviewProvider {
         VStack(spacing: SpacingTokens.lg) {
             // Regular card
             SequenceCard(
+                
                 cardImage: UIImage(systemName: "photo")!,
                 cardTitle: "Morning Flow",
                 cardSubtitle: "Gentle awakening, stretching",
