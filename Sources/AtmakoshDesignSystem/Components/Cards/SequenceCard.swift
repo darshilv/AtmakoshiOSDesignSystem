@@ -30,7 +30,10 @@ public struct SequenceCard: View {
         VStack(alignment: .leading, spacing: 0) {
             // Image section
             ZStack(alignment: .topTrailing) {
-                atmakoshImage(image: cardImage)
+                Image(uiImage: cardImage)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(height: 300)
                 // Lock icon if sequence is locked
                 if cardIsLocked! {
                     LockIconView()
