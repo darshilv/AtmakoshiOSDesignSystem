@@ -48,7 +48,7 @@ public struct PoseCard: View {
         ZStack {
             Rectangle()
                 .fill(GradientTokens.backgroundGradient)
-                .frame(width: 100, height: 100)
+                .frame(width: 100)
                 
             
             if let image = image {
