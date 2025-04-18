@@ -32,7 +32,7 @@ public struct SequenceCard: View {
             ZStack(alignment: .topTrailing) {
                 Image(uiImage: cardImage)
                     .resizable()
-                    .aspectRatio(contentMode: .fill)
+                    .aspectRatio(contentMode: .fit)
                     .frame(height: 300)
                     .edgesIgnoringSafeArea(.all)
                 // Lock icon if sequence is locked
