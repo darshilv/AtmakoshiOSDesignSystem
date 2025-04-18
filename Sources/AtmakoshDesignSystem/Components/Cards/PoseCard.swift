@@ -38,7 +38,7 @@ public struct PoseCard: View {
         .background(Color.white)
         .cornerRadius(12)
         .shadow(color: Color.black.opacity(0.05), radius: 2, x: 0, y: 1)
-        .frame(height: 120)
+        .frame(height: 100)
         
     }
     
