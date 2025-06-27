@@ -140,7 +140,7 @@ public enum ColorTokens {
         public static let teal300 = Color(hex: "#5eead4")
         public static let teal400 = Color(hex: "#2dd4bf")
         public static let teal500 = Color(hex: "#14b8a6")
-        public static let teal600 = Color(hex: "#0d9488")
+        public static let teal600 = Color(hex: "#5E7A6F")
         public static let teal700 = Color(hex: "#0f766e")
         public static let teal800 = Color(hex: "#115e59")
         public static let teal900 = Color(hex: "#134e4a")
