@@ -79,19 +79,49 @@ public struct Theme: Sendable, Equatable {
     
     // MARK: - Predefined Themes
     
-    /// Creates a green-themed variant
+    /// Creates a teal-themed variant for light mode
     public static func yogakoshTheme() -> Theme {
         Theme(
-            primary: ColorTokens.Green.green600,
-            primaryDark: ColorTokens.Green.green800,
-            primaryLight: ColorTokens.Green.green400,
+            primary: ColorTokens.Teal.teal600,
+            primaryDark: ColorTokens.Teal.teal800,
+            primaryLight: ColorTokens.Teal.teal400,
             secondary: ColorTokens.Teal.teal500,
             secondaryDark: ColorTokens.Teal.teal700,
             secondaryLight: ColorTokens.Teal.teal300,
             accent: ColorTokens.Blue.blue500
         )
     }
-    
+
+    /// Creates a teal-themed variant for dark mode with high-contrast colors
+    public static func yogakoshDarkTheme() -> Theme {
+        Theme(
+            // Brand Colors - Optimized for dark mode contrast
+            primary: ColorTokens.Teal.teal400,        // #2dd4bf - 8.52:1 contrast
+            primaryDark: ColorTokens.Teal.teal500,
+            primaryLight: ColorTokens.Teal.teal300,
+            secondary: ColorTokens.Teal.teal500,      // Lighter teal shade
+            secondaryDark: ColorTokens.Teal.teal700,
+            secondaryLight: ColorTokens.Teal.teal400,
+            accent: ColorTokens.Blue.blue400,         // Brightened blue for dark mode
+
+            // Background Colors
+            background: ColorTokens.Gray.gray900,
+            backgroundSecondary: ColorTokens.Gray.gray800,
+            backgroundTertiary: ColorTokens.Gray.gray700,
+
+            // Text Colors
+            textPrimary: ColorTokens.Gray.gray50,
+            textSecondary: ColorTokens.Gray.gray300,
+            textTertiary: ColorTokens.Gray.gray500,
+
+            // Status Colors - Brightened for dark mode
+            success: ColorTokens.Green.green400,
+            warning: ColorTokens.Yellow.yellow400,
+            error: ColorTokens.Red.red400,
+            info: ColorTokens.Blue.blue400
+        )
+    }
+
     /// Creates a purple-themed variant
     public static func purpleTheme() -> Theme {
         Theme(
