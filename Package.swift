@@ -6,7 +6,6 @@ import PackageDescription
 let package = Package(
     name: "AtmakoshDesignSystem",
     platforms: [
-        .macOS(.v15),
         .iOS(.v18)
     ],
     products: [
@@ -29,3 +28,4 @@ let package = Package(
         ),
     ]
 )
+
