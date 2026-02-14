@@ -58,6 +58,13 @@ public struct PillView: View {
     }
 }
 
+private struct PreviewGradientBackground: View {
+    @Environment(\.colorScheme) private var colorScheme
+    var body: some View {
+        GradientTokens.backgroundGradient(for: colorScheme)
+    }
+}
+
 struct PillView_Previews: PreviewProvider {
     static var previews: some View {
         VStack(spacing: 20) {
@@ -87,7 +94,7 @@ struct PillView_Previews: PreviewProvider {
         }
         .previewLayout(.sizeThatFits)
         .padding()
-        .background(GradientTokens.backgroundGradient)
+        .background { PreviewGradientBackground() }
         
         // Responsive layout preview with multiple pills in a flow layout
         VStack(alignment: .leading) {
@@ -106,7 +113,7 @@ struct PillView_Previews: PreviewProvider {
         }
         .padding()
         .previewLayout(.sizeThatFits)
-        .background(GradientTokens.backgroundGradient)
+        .background { PreviewGradientBackground() }
        
     }
 }
@@ -190,3 +197,4 @@ struct FlexibleRowView: View {
         }
     }
 }
+

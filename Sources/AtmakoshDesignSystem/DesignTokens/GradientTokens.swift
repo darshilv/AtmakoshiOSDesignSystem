@@ -6,11 +6,6 @@
 //
 
 import SwiftUI
-#if os(iOS)
-import UIKit
-#elseif os(macOS)
-import AppKit
-#endif
 
 @available(macOS 10.15, *)
 // Tailwind-inspired color system
@@ -21,36 +16,39 @@ public enum GradientTokens {
     public static let lightTeal = Color(hex: "91B0B2")
    // public static let teal50 = Color(hex: "D7EEEB")
 
-    // Adaptive background gradient that changes based on light/dark mode
-    public static var backgroundGradient: LinearGradient {
-        #if os(iOS)
-        let isDark = UITraitCollection.current.userInterfaceStyle == .dark
-        #elseif os(macOS)
-        let isDark = NSApp?.effectiveAppearance.bestMatch(from: [.darkAqua, .aqua]) == .darkAqua
-        #else
-        let isDark = false
-        #endif
+    // Static gradients for specific modes
+    public static let lightGradient = LinearGradient(
+        gradient: SwiftUI.Gradient(colors: [
+            Color(hex: "E8E0D6"),          // Light beige
+            Color(hex: "C6D8D8")           // Light teal
+        ]),
+        startPoint: .top,
+        endPoint: .bottom
+    )
 
-        if isDark {
-            // Dark mode gradient - dark gray to darker teal
-            return LinearGradient(
-                gradient: SwiftUI.Gradient(colors: [
-                    ColorTokens.Gray.gray900,      // #111827 - dark background
-                    darkTeal                        // #214345 - darker teal
-                ]),
-                startPoint: .top,
-                endPoint: .bottom
-            )
-        } else {
-            // Light mode gradient - light beige to light teal
-            return LinearGradient(
-                gradient: SwiftUI.Gradient(colors: [
-                    Color(hex: "E8E0D6"),          // Light beige
-                    Color(hex: "C6D8D8")           // Light teal
-                ]),
-                startPoint: .top,
-                endPoint: .bottom
-            )
-        }
+    public static let darkGradient = LinearGradient(
+        gradient: SwiftUI.Gradient(colors: [
+            ColorTokens.Gray.gray900,      // #111827 - dark background
+            darkTeal                        // #214345 - darker teal
+        ]),
+        startPoint: .top,
+        endPoint: .bottom
+    )
+
+    // Helper function to get gradient for color scheme
+    public static func backgroundGradient(for colorScheme: ColorScheme) -> LinearGradient {
+        colorScheme == .dark ? darkGradient : lightGradient
+    }
+}
+
+// MARK: - Adaptive Background Gradient View
+@available(macOS 10.15, *)
+public struct AdaptiveBackgroundGradient: View {
+    @Environment(\.colorScheme) private var colorScheme
+
+    public init() {}
+
+    public var body: some View {
+        GradientTokens.backgroundGradient(for: colorScheme)
     }
 }
