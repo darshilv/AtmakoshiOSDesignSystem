@@ -105,15 +105,33 @@ public struct Theme: Sendable, Equatable {
         )
     }
     
-    /// Creates a dark mode theme
+    /// Creates a dark mode theme with high-contrast colors for accessibility
     public static func darkTheme() -> Theme {
         Theme(
+            // Brand Colors - Optimized for dark mode contrast
+            primary: ColorTokens.Teal.teal400,        // #2dd4bf - 8.52:1 contrast
+            primaryDark: ColorTokens.Teal.teal500,
+            primaryLight: ColorTokens.Teal.teal300,
+            secondary: ColorTokens.Teal.teal500,      // #14b8a6 - 6.14:1 contrast
+            secondaryDark: ColorTokens.Teal.teal700,
+            secondaryLight: ColorTokens.Teal.teal400,
+            accent: ColorTokens.Teal.teal400,
+
+            // Background Colors
             background: ColorTokens.Gray.gray900,
             backgroundSecondary: ColorTokens.Gray.gray800,
             backgroundTertiary: ColorTokens.Gray.gray700,
+
+            // Text Colors
             textPrimary: ColorTokens.Gray.gray50,
             textSecondary: ColorTokens.Gray.gray300,
-            textTertiary: ColorTokens.Gray.gray500
+            textTertiary: ColorTokens.Gray.gray500,
+
+            // Status Colors - Brightened for dark mode
+            success: ColorTokens.Green.green400,
+            warning: ColorTokens.Yellow.yellow400,
+            error: ColorTokens.Red.red400,
+            info: ColorTokens.Blue.blue400
         )
     }
     

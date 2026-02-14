@@ -32,8 +32,8 @@ public struct PrimaryButton: View {
         }
         .background(
              RoundedRectangle(cornerRadius: 20)
-                .fill(ColorTokens.Teal.teal900)
-            
+                .fill(theme.primary)
+
         )
        // .padding(.horizontal, isFullWidth ? horizontalPadding : 0)
     }

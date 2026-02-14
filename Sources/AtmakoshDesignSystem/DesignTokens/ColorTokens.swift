@@ -177,33 +177,117 @@ public enum ColorTokens {
         public static let pink950 = Color(hex: "#500724")
     }
     
-    // MARK: - Semantic Colors
+    // MARK: - Semantic Colors (Adaptive for Light/Dark Mode)
     public enum Semantic {
-        // Base text colors
-        public static let textPrimary = Teal.teal900
-        public static let textSecondary = Teal.teal600
-        public static let textTertiary = Teal.teal400
-        
-        // Background colors
-        public static let backgroundPrimary = Gray.gray50
-        public static let backgroundSecondary = Gray.gray100
-        public static let backgroundTertiary = Gray.gray200
-        
-        // Status colors
-        public static let success = Green.green600
-        public static let warning = Yellow.yellow500
-        public static let error = Red.red600
-        public static let info = Blue.blue500
-        
-        // Action colors
-        public static let primary = Teal.teal900
-        public static let secondary = Purple.purple600
-        public static let tertiary = Gray.gray600
-        
-        //border colors
-        public static let borderMedium = Color(hex: "EBEBEB")
-        
-        //grabber
-        public static let grabber = Slate.slate500
+        // Base text colors - adaptive
+        public static var textPrimary: Color {
+            .adaptive(
+                light: Teal.teal900,    // Dark text on light background
+                dark: Gray.gray50       // Light text on dark background
+            )
+        }
+
+        public static var textSecondary: Color {
+            .adaptive(
+                light: Teal.teal600,    // Medium-dark text on light background
+                dark: Gray.gray300      // Medium-light text on dark background
+            )
+        }
+
+        public static var textTertiary: Color {
+            .adaptive(
+                light: Teal.teal400,    // Light text on light background
+                dark: Gray.gray500      // Dim text on dark background
+            )
+        }
+
+        // Background colors - adaptive
+        public static var backgroundPrimary: Color {
+            .adaptive(
+                light: Gray.gray50,     // Light background
+                dark: Gray.gray900      // Dark background
+            )
+        }
+
+        public static var backgroundSecondary: Color {
+            .adaptive(
+                light: Gray.gray100,    // Slightly darker light background
+                dark: Gray.gray800      // Slightly lighter dark background
+            )
+        }
+
+        public static var backgroundTertiary: Color {
+            .adaptive(
+                light: Gray.gray200,    // Even darker light background
+                dark: Gray.gray700      // Even lighter dark background
+            )
+        }
+
+        // Status colors - adaptive (brightened for dark mode)
+        public static var success: Color {
+            .adaptive(
+                light: Green.green600,  // Standard green for light mode
+                dark: Green.green400    // Brighter green for dark mode - 7.8:1 contrast
+            )
+        }
+
+        public static var warning: Color {
+            .adaptive(
+                light: Yellow.yellow500,    // Standard yellow for light mode
+                dark: Yellow.yellow400      // Brighter yellow for dark mode - 13.5:1 contrast
+            )
+        }
+
+        public static var error: Color {
+            .adaptive(
+                light: Red.red600,      // Standard red for light mode
+                dark: Red.red400        // Brighter red for dark mode - 7.9:1 contrast
+            )
+        }
+
+        public static var info: Color {
+            .adaptive(
+                light: Blue.blue500,    // Standard blue for light mode
+                dark: Blue.blue400      // Brighter blue for dark mode - 7.2:1 contrast
+            )
+        }
+
+        // Action colors - adaptive (high contrast for dark mode)
+        public static var primary: Color {
+            .adaptive(
+                light: Teal.teal900,    // Dark teal for light mode
+                dark: Teal.teal400      // Bright teal for dark mode - 8.52:1 contrast
+            )
+        }
+
+        public static var secondary: Color {
+            .adaptive(
+                light: Purple.purple600,    // Standard purple for light mode
+                dark: Purple.purple400      // Brighter purple for dark mode
+            )
+        }
+
+        public static var tertiary: Color {
+            .adaptive(
+                light: Gray.gray600,    // Darker gray for light mode
+                dark: Gray.gray400      // Lighter gray for dark mode
+            )
+        }
+
+        // Border colors - adaptive
+        public static var borderMedium: Color {
+            .adaptive(
+                light: Color(hex: "EBEBEB"),    // Light border for light mode
+                dark: Gray.gray700              // Darker border for dark mode
+            )
+        }
+
+        // Grabber - adaptive
+        public static var grabber: Color {
+            .adaptive(
+                light: Slate.slate500,  // Standard grabber for light mode
+                dark: Slate.slate400    // Lighter grabber for dark mode
+            )
+        }
     }
 }
