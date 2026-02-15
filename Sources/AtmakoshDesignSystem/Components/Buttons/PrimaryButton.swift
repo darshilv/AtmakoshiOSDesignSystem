@@ -25,7 +25,7 @@ public struct PrimaryButton: View {
         Button(action: action) {
             Text(title)
                 .font(.headline)
-                .foregroundColor(.white)
+                .foregroundColor(ColorTokens.Teal.teal950)
                 .frame(maxWidth: .infinity)
                 .frame(height: 50)
             //.padding(.horizontal, isFullWidth ? 0 : horizontalPadding)
