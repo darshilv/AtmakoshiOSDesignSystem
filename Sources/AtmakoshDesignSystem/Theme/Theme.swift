@@ -82,8 +82,8 @@ public struct Theme: Sendable, Equatable {
     /// Creates a teal-themed variant for light mode
     public static func yogakoshTheme() -> Theme {
         Theme(
-            primary: ColorTokens.Teal.teal600,
-            primaryDark: ColorTokens.Teal.teal800,
+            primary: ColorTokens.Teal.teal700,
+            primaryDark: ColorTokens.Teal.teal900,
             primaryLight: ColorTokens.Teal.teal400,
             secondary: ColorTokens.Teal.teal500,
             secondaryDark: ColorTokens.Teal.teal700,
@@ -96,8 +96,8 @@ public struct Theme: Sendable, Equatable {
     public static func yogakoshDarkTheme() -> Theme {
         Theme(
             // Brand Colors - Optimized for dark mode contrast
-            primary: ColorTokens.Teal.teal400,        // #2dd4bf - 8.52:1 contrast
-            primaryDark: ColorTokens.Teal.teal500,
+            primary: ColorTokens.Teal.teal500,        // #2dd4bf - 8.52:1 contrast
+            primaryDark: ColorTokens.Teal.teal600,
             primaryLight: ColorTokens.Teal.teal300,
             secondary: ColorTokens.Teal.teal500,      // Lighter teal shade
             secondaryDark: ColorTokens.Teal.teal700,
