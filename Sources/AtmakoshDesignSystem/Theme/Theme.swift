@@ -31,6 +31,7 @@ public struct Theme: Sendable, Equatable {
     public let textPrimary: Color
     public let textSecondary: Color
     public let textTertiary: Color
+    public let textPrimaryButton: Color
     
     // MARK: - Status Colors
     public let success: Color
@@ -53,6 +54,7 @@ public struct Theme: Sendable, Equatable {
         textPrimary: Color = ColorTokens.Gray.gray900,
         textSecondary: Color = ColorTokens.Gray.gray700,
         textTertiary: Color = ColorTokens.Gray.gray500,
+        textPrimaryButton: Color = ColorTokens.Teal.teal950,
         success: Color = ColorTokens.Green.green500,
         warning: Color = ColorTokens.Yellow.yellow500,
         error: Color = ColorTokens.Red.red500,
@@ -68,6 +70,7 @@ public struct Theme: Sendable, Equatable {
         self.background = background
         self.backgroundSecondary = backgroundSecondary
         self.backgroundTertiary = backgroundTertiary
+        self.textPrimaryButton = textPrimaryButton
         self.textPrimary = textPrimary
         self.textSecondary = textSecondary
         self.textTertiary = textTertiary
@@ -82,13 +85,16 @@ public struct Theme: Sendable, Equatable {
     /// Creates a teal-themed variant for light mode
     public static func yogakoshTheme() -> Theme {
         Theme(
-            primary: ColorTokens.Teal.teal700,
+            primary: ColorTokens.Teal.teal800,
             primaryDark: ColorTokens.Teal.teal900,
             primaryLight: ColorTokens.Teal.teal400,
             secondary: ColorTokens.Teal.teal500,
             secondaryDark: ColorTokens.Teal.teal700,
             secondaryLight: ColorTokens.Teal.teal300,
-            accent: ColorTokens.Blue.blue500
+            accent: ColorTokens.Blue.blue500,
+            
+            textPrimaryButton: ColorTokens.Gray.gray50
+            
         )
     }
 
@@ -113,6 +119,7 @@ public struct Theme: Sendable, Equatable {
             textPrimary: ColorTokens.Gray.gray50,
             textSecondary: ColorTokens.Gray.gray300,
             textTertiary: ColorTokens.Gray.gray500,
+            textPrimaryButton: ColorTokens.Teal.teal950,
 
             // Status Colors - Brightened for dark mode
             success: ColorTokens.Green.green400,
