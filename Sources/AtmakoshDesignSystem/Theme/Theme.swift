@@ -116,7 +116,8 @@ public struct Theme: Sendable, Equatable {
             backgroundTertiary: ColorTokens.Gray.gray700,
 
             // Text Colors
-            textPrimary: ColorTokens.Gray.gray50,
+            textPrimary: ColorTokens.Cream.cream50,
+           // textPrimary: ColorTokens.Gray.gray50,
             textSecondary: ColorTokens.Gray.gray300,
             textTertiary: ColorTokens.Gray.gray500,
             textPrimaryButton: ColorTokens.Teal.teal950,

@@ -57,6 +57,12 @@ public enum ColorTokens {
         public static let zinc950 = Color(hex: "09090b")
     }
     
+    //MARK: - cream
+    public enum Cream {
+        public static let cream50 = Color(hex: "E1DDCF")
+      
+    }
+    
     // MARK: - Blue
     public enum Blue {
         public static let blue50 = Color(hex: "eff6ff")
