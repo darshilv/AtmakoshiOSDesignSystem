@@ -59,7 +59,7 @@ public enum ColorTokens {
     
     //MARK: - cream
     public enum Cream {
-        public static let cream50 = Color(hex: "E1DDCF")
+        //public static let cream50 = Color(hex: "E1DDCF")
        
         /// Use for: Pure highlights or very small text on dark backgrounds
         public static let cream100 = Color(hex: "F8F6F0")

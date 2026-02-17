@@ -113,13 +113,13 @@ public struct Theme: Sendable, Equatable {
         Theme(
             // Brand Colors - Optimized for dark mode contrast
             primary: ColorTokens.Teal.teal600,        // #2dd4bf - 8.52:1 contrast
-            primaryDark: ColorTokens.Cream.cream50,
+            primaryDark: ColorTokens.Cream.cream300,
             primaryLight: ColorTokens.Teal.teal200,
             secondary: ColorTokens.Teal.teal500,      // Lighter teal shade
             secondaryDark: ColorTokens.Cream.cream100,
             secondaryLight: ColorTokens.Teal.teal400,
             tertiary: ColorTokens.Teal.teal800,
-            tertiaryDark: ColorTokens.Cream.cream200,
+            tertiaryDark: ColorTokens.Cream.cream300,
             tertiaryLight: ColorTokens.Teal.teal600,
             accent: ColorTokens.Blue.blue400,         // Brightened blue for dark mode
 
@@ -129,10 +129,10 @@ public struct Theme: Sendable, Equatable {
             backgroundTertiary: ColorTokens.Gray.gray700,
 
             // Text Colors
-            textPrimary: ColorTokens.Cream.cream50,
+            textPrimary: ColorTokens.Cream.cream300,
            // textPrimary: ColorTokens.Gray.gray50,
-            textSecondary: ColorTokens.Cream.cream100,
-            textTertiary: ColorTokens.Cream.cream200,
+            textSecondary: ColorTokens.Cream.cream400,
+            textTertiary: ColorTokens.Cream.cream100,
             textPrimaryButton: ColorTokens.Teal.teal950,
 
             // Status Colors - Brightened for dark mode
@@ -161,7 +161,7 @@ public struct Theme: Sendable, Equatable {
         Theme(
             // Brand Colors - Optimized for dark mode contrast
             primary: ColorTokens.Teal.teal400,        // #2dd4bf - 8.52:1 contrast
-            primaryDark: ColorTokens.Cream.cream50,
+            primaryDark: ColorTokens.Cream.cream300,
             primaryLight: ColorTokens.Teal.teal300,
             secondary: ColorTokens.Teal.teal500,      // #14b8a6 - 6.14:1 contrast
             secondaryDark: ColorTokens.Cream.cream200,
