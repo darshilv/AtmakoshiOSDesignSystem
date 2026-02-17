@@ -60,6 +60,22 @@ public enum ColorTokens {
     //MARK: - cream
     public enum Cream {
         public static let cream50 = Color(hex: "E1DDCF")
+       
+        /// Use for: Pure highlights or very small text on dark backgrounds
+        public static let cream100 = Color(hex: "F8F6F0")
+        
+        /// Use for: Primary "Paper" background in light mode or large surface areas
+        public static let cream200 = Color(hex: "EDEAE1")
+        
+        /// The Base: Your original color
+        public static let cream300 = Color(hex: "E1DDCF")
+        
+        /// Use for: Secondary UI elements, borders, or disabled states
+        public static let cream400 = Color(hex: "C6C0AC")
+        
+        /// Use for: Subtle Dividers or tertiary text against light backgrounds
+        public static let cream500 = Color(hex: "A39B84")
+        
       
     }
     
