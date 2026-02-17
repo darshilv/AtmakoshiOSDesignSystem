@@ -20,6 +20,10 @@ public struct Theme: Sendable, Equatable {
     public let secondaryDark: Color
     public let secondaryLight: Color
     
+    public let tertiary: Color
+    public let tertiaryDark: Color
+    public let tertiaryLight: Color
+    
     public let accent: Color
     
     // MARK: - Background Colors
@@ -47,6 +51,9 @@ public struct Theme: Sendable, Equatable {
         secondary: Color = ColorTokens.Indigo.indigo500,
         secondaryDark: Color = ColorTokens.Indigo.indigo700,
         secondaryLight: Color = ColorTokens.Indigo.indigo300,
+        tertiary: Color = ColorTokens.Teal.teal400,
+        tertiaryDark: Color = ColorTokens.Teal.teal500,
+        tertiaryLight: Color = ColorTokens.Teal.teal300,
         accent: Color = ColorTokens.Purple.purple500,
         background: Color = ColorTokens.Gray.gray50,
         backgroundSecondary: Color = ColorTokens.Gray.gray100,
@@ -66,6 +73,9 @@ public struct Theme: Sendable, Equatable {
         self.secondary = secondary
         self.secondaryDark = secondaryDark
         self.secondaryLight = secondaryLight
+        self.tertiary = tertiary
+        self.tertiaryDark = tertiaryDark
+        self.tertiaryLight = tertiaryLight
         self.accent = accent
         self.background = background
         self.backgroundSecondary = backgroundSecondary
@@ -103,11 +113,14 @@ public struct Theme: Sendable, Equatable {
         Theme(
             // Brand Colors - Optimized for dark mode contrast
             primary: ColorTokens.Teal.teal600,        // #2dd4bf - 8.52:1 contrast
-            primaryDark: ColorTokens.Teal.teal700,
+            primaryDark: ColorTokens.Cream.cream50,
             primaryLight: ColorTokens.Teal.teal200,
             secondary: ColorTokens.Teal.teal500,      // Lighter teal shade
-            secondaryDark: ColorTokens.Teal.teal700,
+            secondaryDark: ColorTokens.Cream.cream100,
             secondaryLight: ColorTokens.Teal.teal400,
+            tertiary: ColorTokens.Teal.teal800,
+            tertiaryDark: ColorTokens.Cream.cream200,
+            tertiaryLight: ColorTokens.Teal.teal600,
             accent: ColorTokens.Blue.blue400,         // Brightened blue for dark mode
 
             // Background Colors
@@ -148,12 +161,13 @@ public struct Theme: Sendable, Equatable {
         Theme(
             // Brand Colors - Optimized for dark mode contrast
             primary: ColorTokens.Teal.teal400,        // #2dd4bf - 8.52:1 contrast
-            primaryDark: ColorTokens.Teal.teal500,
+            primaryDark: ColorTokens.Cream.cream50,
             primaryLight: ColorTokens.Teal.teal300,
             secondary: ColorTokens.Teal.teal500,      // #14b8a6 - 6.14:1 contrast
-            secondaryDark: ColorTokens.Teal.teal700,
+            secondaryDark: ColorTokens.Cream.cream200,
             secondaryLight: ColorTokens.Teal.teal400,
             accent: ColorTokens.Teal.teal400,
+            
 
             // Background Colors
             background: ColorTokens.Gray.gray900,
