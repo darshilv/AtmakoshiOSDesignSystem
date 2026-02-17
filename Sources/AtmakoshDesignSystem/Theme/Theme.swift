@@ -115,10 +115,10 @@ public struct Theme: Sendable, Equatable {
             primary: ColorTokens.Teal.teal600,        // #2dd4bf - 8.52:1 contrast
             primaryDark: ColorTokens.Cream.cream300,
             primaryLight: ColorTokens.Teal.teal600,
-            secondary: ColorTokens.Teal.teal500,      // Lighter teal shade
+            secondary: ColorTokens.Teal.teal300,      // Lighter teal shade
             secondaryDark: ColorTokens.Cream.cream100,
             secondaryLight: ColorTokens.Teal.teal400,
-            tertiary: ColorTokens.Teal.teal800,
+            tertiary: ColorTokens.Teal.teal50,
             tertiaryDark: ColorTokens.Cream.cream500,
             tertiaryLight: ColorTokens.Teal.teal600,
             accent: ColorTokens.Blue.blue400,         // Brightened blue for dark mode
