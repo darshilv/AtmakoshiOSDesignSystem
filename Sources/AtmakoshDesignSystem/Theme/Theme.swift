@@ -132,7 +132,7 @@ public struct Theme: Sendable, Equatable {
             textPrimary: ColorTokens.Cream.cream300,
            // textPrimary: ColorTokens.Gray.gray50,
             textSecondary: ColorTokens.Cream.cream400,
-            textTertiary: ColorTokens.Cream.cream100,
+            textTertiary: ColorTokens.Cream.cream500,
             textPrimaryButton: ColorTokens.Teal.teal950,
 
             // Status Colors - Brightened for dark mode
