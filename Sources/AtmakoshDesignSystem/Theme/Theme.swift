@@ -60,7 +60,7 @@ public struct Theme: Sendable, Equatable {
         backgroundTertiary: Color = ColorTokens.Gray.gray200,
         textPrimary: Color = ColorTokens.Teal.teal900,
         textSecondary: Color = ColorTokens.Teal.teal700,
-        textTertiary: Color = ColorTokens.Teal.teal500,
+        textTertiary: Color = ColorTokens.Teal.teal600,
         textPrimaryButton: Color = ColorTokens.Teal.teal950,
         success: Color = ColorTokens.Green.green500,
         warning: Color = ColorTokens.Yellow.yellow500,
