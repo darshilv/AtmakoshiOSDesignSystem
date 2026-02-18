@@ -35,16 +35,6 @@ public final class ThemeManager: ObservableObject {
         self.current = Theme.yogakoshTheme()
     }
     
-    /// Apply the purple variant
-    public func applyPurpleTheme() {
-        self.current = Theme.purpleTheme()
-    }
-    
-    /// Apply dark theme
-    public func applyDarkTheme() {
-        self.current = Theme.darkTheme()
-    }
-    
  }
 
 // Environment key for SwiftUI integration
