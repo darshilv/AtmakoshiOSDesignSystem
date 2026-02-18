@@ -13,16 +13,10 @@ import SwiftUI
 public struct Theme: Sendable, Equatable {
     // MARK: - Brand Colors
     public let primary: Color
-    public let primaryDark: Color
-    public let primaryLight: Color
     
     public let secondary: Color
-    public let secondaryDark: Color
-    public let secondaryLight: Color
     
     public let tertiary: Color
-    public let tertiaryDark: Color
-    public let tertiaryLight: Color
     
     public let accent: Color
     
@@ -46,14 +40,8 @@ public struct Theme: Sendable, Equatable {
     /// Default theme initialization with default values
     public init(
         primary: Color = ColorTokens.Blue.blue500,
-        primaryDark: Color = ColorTokens.Blue.blue700,
-        primaryLight: Color = ColorTokens.Blue.blue300,
         secondary: Color = ColorTokens.Indigo.indigo500,
-        secondaryDark: Color = ColorTokens.Indigo.indigo700,
-        secondaryLight: Color = ColorTokens.Indigo.indigo300,
         tertiary: Color = ColorTokens.Teal.teal400,
-        tertiaryDark: Color = ColorTokens.Teal.teal500,
-        tertiaryLight: Color = ColorTokens.Teal.teal300,
         accent: Color = ColorTokens.Purple.purple500,
         background: Color = ColorTokens.Gray.gray50,
         backgroundSecondary: Color = ColorTokens.Gray.gray100,
@@ -68,14 +56,8 @@ public struct Theme: Sendable, Equatable {
         info: Color = ColorTokens.Blue.blue500
     ) {
         self.primary = primary
-        self.primaryDark = primaryDark
-        self.primaryLight = primaryLight
         self.secondary = secondary
-        self.secondaryDark = secondaryDark
-        self.secondaryLight = secondaryLight
         self.tertiary = tertiary
-        self.tertiaryDark = tertiaryDark
-        self.tertiaryLight = tertiaryLight
         self.accent = accent
         self.background = background
         self.backgroundSecondary = backgroundSecondary
@@ -95,16 +77,28 @@ public struct Theme: Sendable, Equatable {
     /// Creates a teal-themed variant for light mode
     public static func yogakoshTheme() -> Theme {
         Theme(
+            // Brand Colors
             primary: ColorTokens.Teal.teal900,
-            primaryDark: ColorTokens.Teal.teal900,
-            primaryLight: ColorTokens.Teal.teal400,
             secondary: ColorTokens.Teal.teal500,
-            secondaryDark: ColorTokens.Teal.teal700,
-            secondaryLight: ColorTokens.Teal.teal300,
+            tertiary: ColorTokens.Teal.teal400,
             accent: ColorTokens.Blue.blue500,
-            
-            textPrimaryButton: ColorTokens.Gray.gray50
-            
+
+            // Background Colors
+            background: ColorTokens.Gray.gray50,
+            backgroundSecondary: ColorTokens.Gray.gray100,
+            backgroundTertiary: ColorTokens.Gray.gray200,
+
+            // Text Colors
+            textPrimary: ColorTokens.Teal.teal900,
+            textSecondary: ColorTokens.Teal.teal700,
+            textTertiary: ColorTokens.Teal.teal600,
+            textPrimaryButton: ColorTokens.Gray.gray50,
+
+            // Status Colors
+            success: ColorTokens.Green.green500,
+            warning: ColorTokens.Yellow.yellow500,
+            error: ColorTokens.Red.red500,
+            info: ColorTokens.Blue.blue500
         )
     }
 
@@ -112,16 +106,10 @@ public struct Theme: Sendable, Equatable {
     public static func yogakoshDarkTheme() -> Theme {
         Theme(
             // Brand Colors - Optimized for dark mode contrast
-            primary: ColorTokens.Teal.teal600,        // #2dd4bf - 8.52:1 contrast
-            primaryDark: ColorTokens.Cream.cream300,
-            primaryLight: ColorTokens.Teal.teal600,
-            secondary: ColorTokens.Teal.teal300,      // Lighter teal shade
-            secondaryDark: ColorTokens.Cream.cream100,
-            secondaryLight: ColorTokens.Teal.teal400,
-            tertiary: ColorTokens.Teal.teal50,
-            tertiaryDark: ColorTokens.Cream.cream500,
-            tertiaryLight: ColorTokens.Teal.teal600,
-            accent: ColorTokens.Blue.blue400,         // Brightened blue for dark mode
+            primary: ColorTokens.Teal.teal600,
+            secondary: ColorTokens.Teal.teal500,
+            tertiary: ColorTokens.Teal.teal400,
+            accent: ColorTokens.Blue.blue400,
 
             // Background Colors
             background: ColorTokens.Gray.gray900,
@@ -130,54 +118,9 @@ public struct Theme: Sendable, Equatable {
 
             // Text Colors
             textPrimary: ColorTokens.Cream.cream300,
-           // textPrimary: ColorTokens.Gray.gray50,
             textSecondary: ColorTokens.Cream.cream400,
             textTertiary: ColorTokens.Cream.cream500,
             textPrimaryButton: ColorTokens.Teal.teal950,
-
-            // Status Colors - Brightened for dark mode
-            success: ColorTokens.Green.green400,
-            warning: ColorTokens.Yellow.yellow400,
-            error: ColorTokens.Red.red400,
-            info: ColorTokens.Blue.blue400
-        )
-    }
-
-    /// Creates a purple-themed variant
-    public static func purpleTheme() -> Theme {
-        Theme(
-            primary: ColorTokens.Purple.purple600,
-            primaryDark: ColorTokens.Purple.purple800,
-            primaryLight: ColorTokens.Purple.purple400,
-            secondary: ColorTokens.Indigo.indigo500,
-            secondaryDark: ColorTokens.Indigo.indigo700,
-            secondaryLight: ColorTokens.Indigo.indigo300,
-            accent: ColorTokens.Pink.pink500
-        )
-    }
-    
-    /// Creates a dark mode theme with high-contrast colors for accessibility
-    public static func darkTheme() -> Theme {
-        Theme(
-            // Brand Colors - Optimized for dark mode contrast
-            primary: ColorTokens.Teal.teal400,        // #2dd4bf - 8.52:1 contrast
-            primaryDark: ColorTokens.Cream.cream300,
-            primaryLight: ColorTokens.Teal.teal300,
-            secondary: ColorTokens.Teal.teal500,      // #14b8a6 - 6.14:1 contrast
-            secondaryDark: ColorTokens.Cream.cream200,
-            secondaryLight: ColorTokens.Teal.teal400,
-            accent: ColorTokens.Teal.teal400,
-            
-
-            // Background Colors
-            background: ColorTokens.Gray.gray900,
-            backgroundSecondary: ColorTokens.Gray.gray800,
-            backgroundTertiary: ColorTokens.Gray.gray700,
-
-            // Text Colors
-            textPrimary: ColorTokens.Gray.gray50,
-            textSecondary: ColorTokens.Gray.gray300,
-            textTertiary: ColorTokens.Gray.gray500,
 
             // Status Colors - Brightened for dark mode
             success: ColorTokens.Green.green400,
