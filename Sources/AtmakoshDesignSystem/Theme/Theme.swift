@@ -78,9 +78,9 @@ public struct Theme: Sendable, Equatable {
     public static func yogakoshTheme() -> Theme {
         Theme(
             // Brand Colors
-            primary: ColorTokens.Teal.teal900,
-            secondary: ColorTokens.Teal.teal500,
-            tertiary: ColorTokens.Teal.teal400,
+            primary: ColorTokens.Teal.teal600,
+            secondary: ColorTokens.Teal.teal400,
+            tertiary: ColorTokens.Teal.teal200,
             accent: ColorTokens.Blue.blue500,
 
             // Background Colors
