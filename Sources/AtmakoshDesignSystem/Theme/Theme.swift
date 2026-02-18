@@ -39,8 +39,8 @@ public struct Theme: Sendable, Equatable {
     
     /// Default theme initialization with default values
     public init(
-        primary: Color = ColorTokens.Blue.blue500,
-        secondary: Color = ColorTokens.Indigo.indigo500,
+        primary: Color = ColorTokens.Teal.teal600,
+        secondary: Color = ColorTokens.Teal.teal500,
         tertiary: Color = ColorTokens.Teal.teal400,
         accent: Color = ColorTokens.Purple.purple500,
         background: Color = ColorTokens.Gray.gray50,
@@ -91,7 +91,7 @@ public struct Theme: Sendable, Equatable {
             // Text Colors
             textPrimary: ColorTokens.Teal.teal900,
             textSecondary: ColorTokens.Teal.teal700,
-            textTertiary: ColorTokens.Teal.teal600,
+            textTertiary: ColorTokens.Teal.teal100,
             textPrimaryButton: ColorTokens.Gray.gray50,
 
             // Status Colors
