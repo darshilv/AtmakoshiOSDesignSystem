@@ -32,7 +32,7 @@ public struct PrimaryButton: View {
         }
         .background(
              RoundedRectangle(cornerRadius: 20)
-                .fill(theme.primary)
+                .fill(theme.primaryButton)
 
         )
        // .padding(.horizontal, isFullWidth ? horizontalPadding : 0)
