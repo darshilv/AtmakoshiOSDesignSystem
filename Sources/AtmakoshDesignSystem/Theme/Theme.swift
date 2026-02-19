@@ -37,6 +37,9 @@ public struct Theme: Sendable, Equatable {
     public let error: Color
     public let info: Color
     
+    //MARK: button colors
+    public let primaryButton: Color
+    
     /// Default theme initialization with default values
     public init(
         primary: Color = ColorTokens.Teal.teal600,
@@ -53,7 +56,8 @@ public struct Theme: Sendable, Equatable {
         success: Color = ColorTokens.Green.green500,
         warning: Color = ColorTokens.Yellow.yellow500,
         error: Color = ColorTokens.Red.red500,
-        info: Color = ColorTokens.Blue.blue500
+        info: Color = ColorTokens.Blue.blue500,
+        primaryButton: Color = ColorTokens.Teal.teal900
     ) {
         self.primary = primary
         self.secondary = secondary
@@ -70,6 +74,7 @@ public struct Theme: Sendable, Equatable {
         self.warning = warning
         self.error = error
         self.info = info
+        self.primaryButton = primaryButton
     }
     
     // MARK: - Predefined Themes
@@ -87,6 +92,8 @@ public struct Theme: Sendable, Equatable {
             background: ColorTokens.Gray.gray50,
             backgroundSecondary: ColorTokens.Gray.gray100,
             backgroundTertiary: ColorTokens.Gray.gray200,
+            
+            
 
             // Text Colors
             textPrimary: ColorTokens.Teal.teal900,
@@ -98,7 +105,10 @@ public struct Theme: Sendable, Equatable {
             success: ColorTokens.Green.green500,
             warning: ColorTokens.Yellow.yellow500,
             error: ColorTokens.Red.red500,
-            info: ColorTokens.Blue.blue500
+            info: ColorTokens.Blue.blue500,
+            
+            //button background
+            primaryButton: ColorTokens.Teal.teal900
         )
     }
 
@@ -126,7 +136,10 @@ public struct Theme: Sendable, Equatable {
             success: ColorTokens.Green.green400,
             warning: ColorTokens.Yellow.yellow400,
             error: ColorTokens.Red.red400,
-            info: ColorTokens.Blue.blue400
+            info: ColorTokens.Blue.blue400,
+            
+            //button background
+            primaryButton: ColorTokens.Teal.teal600
         )
     }
     
