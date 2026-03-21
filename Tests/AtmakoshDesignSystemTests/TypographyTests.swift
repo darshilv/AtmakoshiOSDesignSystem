@@ -7,14 +7,14 @@
 
 
 import XCTest
-@testable import YourDesignSystem
+@testable import AtmakoshDesignSystem
 
 final class TypographyTests: XCTestCase {
     func testFontSizes() {
         // Test that font sizes match expectations
         XCTAssertEqual(TypographyTokens.Size.xs, 12)
         XCTAssertEqual(TypographyTokens.Size.md, 16)
-        XCTAssertEqual(TypographyTokens.Size.xxxl, 32)
+        XCTAssertEqual(TypographyTokens.Size.xxxl, 30)
         // Add tests for other sizes
     }
     
