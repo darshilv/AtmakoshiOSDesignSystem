@@ -11,40 +11,51 @@ import SwiftUI
 @available(macOS 10.15, *)
 public struct PrimaryButton: View {
     private let title: String
+    private let isLoading: Bool
     private let action: () -> Void
-    
+
     @Environment(\.theme) private var theme
-    
-    public init(title: String, action: @escaping () -> Void) {
+
+    public init(title: String, isLoading: Bool = false, action: @escaping () -> Void) {
         self.title = title
+        self.isLoading = isLoading
         self.action = action
     }
-    
+
     // MARK: - Body
     public var body: some View {
-        Button(action: action) {
-            Text(title)
-                .font(.headline)
-                .foregroundColor(theme.textPrimaryButton)
-                .frame(maxWidth: .infinity)
-                .frame(height: 50)
-            //.padding(.horizontal, isFullWidth ? 0 : horizontalPadding)
+        Button(action: { if !isLoading { action() } }) {
+            ZStack {
+                Text(title)
+                    .font(.headline)
+                    .opacity(isLoading ? 0 : 1)
+
+                if isLoading {
+                    ProgressView()
+                        .tint(theme.textPrimaryButton)
+                }
+            }
+            .foregroundColor(theme.textPrimaryButton)
+            .frame(maxWidth: .infinity)
+            .frame(height: 50)
         }
         .background(
-             RoundedRectangle(cornerRadius: 20)
-                .fill(theme.primaryButton)
-
+            RoundedRectangle(cornerRadius: 20)
+                .fill(theme.primaryButton.opacity(isLoading ? 0.7 : 1))
         )
-       // .padding(.horizontal, isFullWidth ? horizontalPadding : 0)
+        .disabled(isLoading)
     }
-    
+
 }
 
 @available(macOS 10.15.0, *)
 struct PrimaryButton_Previews: PreviewProvider {
     static var previews: some View {
-        PrimaryButton(title: "Start Practice", action: {})
-            .padding()
-            .previewLayout(.sizeThatFits)
+        VStack(spacing: 16) {
+            PrimaryButton(title: "Start Practice", action: {})
+            PrimaryButton(title: "Start Practice", isLoading: true, action: {})
+        }
+        .padding()
+        .previewLayout(.sizeThatFits)
     }
 }
